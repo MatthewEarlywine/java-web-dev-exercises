@@ -8,19 +8,21 @@ public class Main {
         Case menu = new Case();
         ArrayList<Flavor> flavors = menu.getFlavors();
         ArrayList<Cone> cones = menu.getCones();
+        ArrayList<Topping> toppings = menu.getToppings();
         Comparator comparator  = new FlavorComparator();
         Comparator comparator2 = new ConeComparator();
+        Comparator comparator3 = new ToppingComparator();
 
         // TODO: Use a Comparator class to sort the 'flavors' array alphabetically by the 'name'
         //  field.
         System.out.println("\nBefore: \n");
         for (Flavor flavor: flavors) {
-            System.out.println(flavor.getName());
+            System.out.println(flavor);
         }
         flavors.sort(comparator);
         System.out.println("\nAfter: \n");
         for (Flavor flavor: flavors) {
-            System.out.println(flavor.getName());
+            System.out.println(flavor);
         }
 
         // TODO: Use a Comparator class to sort the 'cones' array in increasing order by the 'cost'
@@ -33,6 +35,16 @@ public class Main {
         System.out.println("\nAfter: \n");
         for (Cone cone: cones) {
             System.out.println(cone);
+        }
+
+        System.out.println("\nBefore: \n");
+        for (Topping topping: toppings) {
+            System.out.println(topping);
+        }
+        toppings.sort(comparator3);
+        System.out.println("\nAfter: \n");
+        for (Topping topping: toppings) {
+            System.out.println(topping);
         }
 
 
