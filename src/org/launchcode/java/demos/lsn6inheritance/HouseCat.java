@@ -9,13 +9,25 @@ public class HouseCat extends Cat {
         name = aName;
     }
 
+    public HouseCat(String aName){
+        name = aName;
+    }
+
+//    public HouseCat(double aWeight){ <---This is a bad constructor, ony useful for displaying usage and syntax.
+//        super(aWeight);
+//    }
+
     public boolean isSatisfied() {
         return !isHungry() && !isTired();
     }
 
     @Override
-    public String noise() {
-        return "Hello, my name is " + name + "!";
+    public String noise(){
+        if (isSatisfied()){
+            return "Hello, my name is " + name + "!";
+        } else {
+            return super.noise();
+        }
     }
 
     public String purr() {
